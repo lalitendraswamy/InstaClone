@@ -1,0 +1,18 @@
+.up-loader-container {
+  height: 80vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.up-bg {
+  width: 100vw;
+  padding: 15px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fafafa;
+}

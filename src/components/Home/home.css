@@ -1,0 +1,40 @@
+.home-failure-card {
+  width: 90vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+* {
+  overflow-x: hidden;
+}
+.stories-bg {
+  width: 100vw;
+  padding: 15px;
+  height: 20vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fafafa;
+}
+
+.bg {
+  width: 80vw;
+}
+
+.slick-btn {
+  color: yellow;
+}
+
+.posts-bg {
+  width: 100vw;
+  padding: 15px;
+  background-color: #fafafa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0px;
+}

@@ -1,0 +1,45 @@
+.post-card {
+  width: 80vw;
+  background-color: white;
+  border: 1px solid #dbdbdb;
+  margin-top: 15px;
+  padding: 10px 0px 10px 0px;
+  color: black;
+  line-height: 1.3;
+}
+
+.post-top {
+  height: 10%;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 10px;
+}
+
+.dp {
+  width: 50px;
+  border-radius: 40px;
+  border: 2px dashed #c60188;
+  margin-right: 10px;
+}
+
+.post-bottom {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 10px;
+}
+
+.icon-card {
+  display: flex;
+  align-items: center;
+}
+
+.post-icon {
+  margin-right: 10px;
+}
+
+.nav-link {
+  text-decoration: none;
+  font-weight: bold;
+}

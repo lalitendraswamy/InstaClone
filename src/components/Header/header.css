@@ -1,0 +1,79 @@
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100vw;
+  height: 10vh;
+  border-bottom: 1px solid grey;
+}
+
+.search-card {
+  width: 20vw;
+  height: 5vh;
+  border-radius: 5px;
+  background-color: white;
+
+  border-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 2px solid #dbdbdb;
+}
+
+.search-input {
+  width: 17vw;
+  height: 4vh;
+  margin-bottom: 0px;
+  border-radius: 0px;
+  background-color: white;
+
+  border-style: none;
+  outline: none;
+}
+
+button {
+  border-style: none;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.search-btn {
+  height: 5vh;
+  width: 3vw;
+  border: 2px solid #dbdbdb;
+}
+
+.nav-list {
+  list-style-type: none;
+  padding: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 15vw;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: black;
+}
+
+.lg-btn {
+  background-color: #4094ef;
+  padding: 10px;
+  border-radius: 6px;
+  color: white;
+}
+
+.flex-card {
+  display: flex;
+  justify-content: space-between;
+  width: 37vw;
+  align-items: center;
+}
+
+.flex-card1 {
+  display: flex;
+  justify-content: space-between;
+  width: 16vw;
+  align-items: center;
+}
