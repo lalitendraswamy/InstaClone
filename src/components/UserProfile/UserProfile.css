@@ -16,3 +16,31 @@
   justify-content: center;
   background-color: #fafafa;
 }
+
+.up-pic-card {
+  width: 70vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.up-pic {
+  height: 150px;
+  width: 200px;
+  border-radius: 150px;
+  margin-right: 50px;
+}
+
+.followers-card {
+  display: flex;
+  width: 30vw;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.user-name {
+  font-weight: 200;
+}
+
+.up-story-bg {
+}

@@ -1,0 +1,11 @@
+.up-story-img {
+  height: 60px;
+  width: 60px;
+  border-radius: 60px;
+}
+
+.up-story-card {
+  font-size: 10px;
+  display: flex;
+  justify-content: center;
+}
