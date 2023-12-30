@@ -180,7 +180,7 @@ class Home extends Component {
 
     if (response.ok) {
       const data = await response.json()
-      console.log(data)
+
       const {posts} = data
       this.setState({postStatus: statusCode.success, postsList: posts})
     } else {
@@ -190,7 +190,6 @@ class Home extends Component {
 
   renderSuccessPosts = () => {
     const {postsList} = this.state
-    console.log(this.state)
 
     return (
       <div>

@@ -2,10 +2,14 @@ import {Component} from 'react'
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
+import {BsGrid3X3} from 'react-icons/bs'
+import {BiCamera} from 'react-icons/bi'
 import Loader from 'react-loader-spinner'
 import Cookies from 'js-cookie'
+import UserPost from './UserPost/UserPost'
 import Stories from './Stories/stories'
 import Header from '../Header/header'
+
 import './UserProfile.css'
 
 const statusCode = {
@@ -138,7 +142,9 @@ class UserProfile extends Component {
 
   renderSuccessUserProfile = () => {
     const {userData} = this.state
-    console.log(userData)
+    const {posts} = userData
+    const l = posts.length
+
     return (
       <div>
         <div className="up-pic-card">
@@ -161,6 +167,27 @@ class UserProfile extends Component {
           </div>
         </div>
         {this.renderSuccessStories()}
+        <hr />
+        <div>
+          <div className="flex">
+            <BsGrid3X3 className="grid-icon" />
+            <h2>Posts</h2>
+          </div>
+          <div>
+            {l > 0 ? (
+              <ul className="up-list">
+                {posts.map(obj => (
+                  <UserPost key={obj.id} obj={obj} />
+                ))}
+              </ul>
+            ) : (
+              <div className="no-posts-card">
+                <BiCamera className="cam-icon" />
+                <h1 className="user-name">No Posts Yet</h1>
+              </div>
+            )}
+          </div>
+        </div>
       </div>
     )
   }
