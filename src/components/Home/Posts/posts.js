@@ -62,7 +62,6 @@ class Posts extends Component {
   render() {
     const {postDetails} = this.props
     const {likeStatus, count} = this.state
-    console.log(postDetails)
 
     return (
       <li className="post-card">

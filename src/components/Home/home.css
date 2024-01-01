@@ -38,3 +38,11 @@ ul {
   list-style-type: none;
   padding: 0px;
 }
+
+.search-nf-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 80vw;
+}

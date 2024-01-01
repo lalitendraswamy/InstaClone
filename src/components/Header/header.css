@@ -38,8 +38,9 @@ button {
 }
 
 .search-btn {
-  height: 5vh;
   width: 3vw;
+  padding: 5.5px;
+  overflow-y: none;
   border: 2px solid #dbdbdb;
 }
 

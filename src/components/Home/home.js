@@ -7,6 +7,7 @@ import Cookies from 'js-cookie'
 import Header from '../Header/header'
 import Stories from './Stories/stories'
 import Posts from './Posts/posts'
+import Context from '../../Context/InstaContext'
 import './home.css'
 
 const statusCode = {
@@ -19,7 +20,7 @@ class Home extends Component {
   state = {
     postStatus: statusCode.loading,
     storyStatus: statusCode.loading,
-    storiesList: [],
+    searchStatus: statusCode.success,
   }
 
   componentDidMount() {
@@ -131,15 +132,15 @@ class Home extends Component {
   }
 
   onRetryBtn = () => {
-    const {postStatus, storyStatus} = this.state
+    const {postStatus, searchStatus} = this.state
     if (
       postStatus === statusCode.failure &&
-      storyStatus !== statusCode.failure
+      searchStatus !== statusCode.failure
     ) {
       return this.getPosts()
     }
     if (
-      storyStatus === statusCode.failure &&
+      searchStatus === statusCode.failure &&
       postStatus !== statusCode.failure
     ) {
       return this.getStories()
@@ -217,13 +218,99 @@ class Home extends Component {
     }
   }
 
-  render() {
+  renderSuccessSearchPosts = value => {
+    const {searchList} = value
+    const l = searchList.length
+
     return (
       <div>
-        <Header />
-        <div className="stories-bg">{this.renderStories()}</div>
-        <div className="posts-bg">{this.renderPosts()}</div>
+        {l > 0 ? (
+          <div>
+            <h1>Search Results</h1>
+            <ul>
+              {searchList.map(obj => (
+                <Posts key={obj.post_id} postDetails={obj} />
+              ))}
+            </ul>
+          </div>
+        ) : (
+          <div className="search-nf-card">
+            <img
+              height="50%"
+              alt="search not found"
+              src="https://res.cloudinary.com/lalitendra/image/upload/v1704123322/Group_2_yyijgw.png"
+            />
+            <h1 className="">Search Not Foundt</h1>
+            <p>Try different keyword or search again</p>
+          </div>
+        )}
       </div>
+    )
+  }
+
+  renderSearchfailure = value => {
+    const {onClickSearchBtn} = value
+
+    const onSearchRetry = () => {
+      onClickSearchBtn()
+    }
+
+    return (
+      <div className="home-failure-card">
+        <img
+          alt="failure view"
+          src="https://res.cloudinary.com/lalitendra/image/upload/v1703417227/alert-triangle_hdyjx5.png"
+        />
+        <p>Something went wrong. Please try again</p>
+        <button onClick={onSearchRetry} type="button" className="lg-btn">
+          Try again
+        </button>
+      </div>
+    )
+  }
+
+  renderSearchPosts = value => {
+    const {searchStatus} = value
+    switch (searchStatus) {
+      case statusCode.loading:
+        return this.renderLoader()
+      case statusCode.success:
+        return this.renderSuccessSearchPosts(value)
+      case statusCode.failure:
+        return this.renderSearchfailure(value)
+
+      default:
+        return null
+    }
+  }
+
+  render() {
+    return (
+      <Context.Consumer>
+        {value => {
+          const {searchText, searchList, searchStatus} = value
+          console.log(searchText)
+          console.log(searchList)
+          console.log(searchStatus)
+          return (
+            <div>
+              <Header />
+              {searchText === '' ? (
+                <div>
+                  <div className="stories-bg">{this.renderStories()}</div>
+                  <div className="posts-bg">{this.renderPosts()}</div>
+                </div>
+              ) : (
+                <div>
+                  <div className="posts-bg">
+                    {this.renderSearchPosts(value)}
+                  </div>
+                </div>
+              )}
+            </div>
+          )
+        }}
+      </Context.Consumer>
     )
   }
 }

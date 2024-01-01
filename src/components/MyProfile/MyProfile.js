@@ -138,7 +138,7 @@ class MyProfile extends Component {
   renderSuccessUserProfile = () => {
     const {profileData} = this.state
     const {posts} = profileData
-    const l = 0
+    const l = posts.length
     console.log(profileData)
     return (
       <div>
