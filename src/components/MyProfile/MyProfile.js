@@ -1,7 +1,5 @@
 import {Component} from 'react'
 import Slider from 'react-slick'
-import 'slick-carousel/slick/slick.css'
-import 'slick-carousel/slick/slick-theme.css'
 import {BsGrid3X3} from 'react-icons/bs'
 import {BiCamera} from 'react-icons/bi'
 import Loader from 'react-loader-spinner'
@@ -75,53 +73,35 @@ class MyProfile extends Component {
     const {profileData} = this.state
     const storiesList = profileData.stories
 
-    const SampleNextArrow = props => {
-      const {className, style, onClick} = props
-      return (
-        <div
-          className={className}
-          style={{
-            ...style,
-            display: 'block',
-            background: '#334155',
-            borderRadius: '16px',
-            color: 'black',
-          }}
-          onClick={onClick}
-          aria-label="Control Label1"
-          role="button" // Add role="button" to indicate it's a button-like element
-          tabIndex={0} // Add tabindex to make it focusable and interactive
-        />
-      )
-    }
-
-    const SamplePrevArrow = props => {
-      const {className, style, onClick} = props
-      return (
-        <div
-          className={className}
-          style={{
-            ...style,
-            display: 'block',
-            backgroundColor: '#E5E5E5',
-            borderRadius: '16px',
-          }}
-          onClick={onClick}
-          role="button"
-          aria-label="Control Label"
-          tabIndex={0}
-        />
-      )
-    }
-
     const settings = {
       dots: false,
-
+      infinite: false,
+      speed: 500,
       slidesToShow: 7,
       slidesToScroll: 1,
-      nextArrow: <SampleNextArrow />,
-      prevArrow: <SamplePrevArrow />,
-      adaptiveHeight: true,
+      responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 7,
+            slidesToScroll: 1,
+          },
+        },
+        {
+          breakpoint: 600,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 1,
+          },
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 1,
+          },
+        },
+      ],
     }
 
     return (

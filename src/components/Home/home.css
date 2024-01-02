@@ -17,12 +17,22 @@
   background-color: #fafafa;
 }
 
-.bg {
+.slick-container {
   width: 80vw;
+  max-width: 1100px;
+  margin-top: 10px;
 }
 
-.slick-btn {
-  color: yellow;
+/* You can change the CSS color to style the Next and 
+Previous Arrow buttons according to your project */
+
+.slick-prev:before,
+.slick-next:before {
+  color: black;
+}
+
+.bg {
+  width: 80vw;
 }
 
 .posts-bg {

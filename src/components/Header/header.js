@@ -65,7 +65,7 @@ class Header extends Component {
                     aria-label="Control Label"
                     onClick={onSearch}
                     type="button"
-                    data-testid="searchIcon"
+                    testid="searchIcon"
                   >
                     <FaSearch />
                   </button>

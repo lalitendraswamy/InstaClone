@@ -91,7 +91,7 @@ class Posts extends Component {
                 className="post-icon"
                 type="button"
                 aria-label="like"
-                data-testid="unLikeIcon"
+                testid="unLikeIcon"
                 onClick={this.onClickLike}
               >
                 <FcLike />
@@ -101,7 +101,7 @@ class Posts extends Component {
                 className="post-icon"
                 type="button"
                 aria-label="like"
-                data-testid="likeIcon"
+                testid="likeIcon"
                 onClick={this.onClickUnlike}
               >
                 <BsHeart />
@@ -112,7 +112,7 @@ class Posts extends Component {
               className="post-icon"
               type="button"
               aria-label="like"
-              data-testid="unLikeIcon"
+              testid="unLikeIcon"
             >
               <FaRegComment />
             </button>
@@ -120,7 +120,7 @@ class Posts extends Component {
               className="post-icon"
               type="button"
               aria-label="like"
-              data-testid="unLikeIcon"
+              testid="unLikeIcon"
             >
               <BiShareAlt />
             </button>
