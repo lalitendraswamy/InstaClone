@@ -126,15 +126,14 @@ class Posts extends Component {
             </button>
           </div>
 
-          <p>
-            <b>{count} likes</b>
-          </p>
+          <p>{count} likes</p>
           <p>{postDetails.post_details.caption}</p>
 
           <ul>
             {postDetails.comments.map(obj => (
               <li key={obj.user_id}>
-                <b>{obj.user_name}</b> {obj.comment}
+                <span>{obj.user_name}</span>
+                <p>{obj.comment}</p>
               </li>
             ))}
           </ul>

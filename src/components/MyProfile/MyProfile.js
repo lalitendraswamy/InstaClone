@@ -64,7 +64,7 @@ class MyProfile extends Component {
   )
 
   renderLoader = () => (
-    <div className="up-loader-container" data-testid="loader">
+    <div className="up-loader-container" testid="loader">
       <Loader type="TailSpin" color="#4094EF" height={30} width={30} />
     </div>
   )
@@ -124,7 +124,7 @@ class MyProfile extends Component {
       <div>
         <div className="up-pic-card">
           <img
-            alt="user profile"
+            alt="my profile"
             className="up-pic"
             src={profileData.profile_pic}
           />
@@ -135,9 +135,7 @@ class MyProfile extends Component {
               <div>{profileData.followers_count} followers</div>
               <div>{profileData.following_count} following</div>
             </div>
-            <p>
-              <b>{profileData.user_id}</b>
-            </p>
+            <p>{profileData.user_id}</p>
             <p>{profileData.user_bio}</p>
           </div>
         </div>

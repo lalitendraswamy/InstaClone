@@ -13,6 +13,7 @@ class Header extends Component {
   }
 
   render() {
+    const {searchText} = this.state
     return (
       <Context.Consumer>
         {value => {
@@ -42,12 +43,12 @@ class Header extends Component {
           return (
             <nav>
               <div className="flex-card1">
-                <button type="button" onClick={onClickLogo}>
+                <Link to="/">
                   <img
                     alt="website logo"
                     src="https://res.cloudinary.com/lalitendra/image/upload/v1702811251/logo_bdpwgo.png"
                   />
-                </button>
+                </Link>
                 <h1>Insta Share</h1>
               </div>
 
@@ -58,7 +59,9 @@ class Header extends Component {
                     placeholder="Search"
                     id="search"
                     onChange={this.onSearchInput}
+                    placeholder="Search Caption"
                     type="search"
+                    value={searchText}
                   />
                   <button
                     className="search-btn"
